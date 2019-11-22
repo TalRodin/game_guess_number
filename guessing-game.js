@@ -29,6 +29,7 @@ class Game{
         this.pastGuesses=[]
         this.winningNumber=generateWinningNumber() 
     }
+    
     difference(){
        return Math.abs(this.playersGuess-this.winningNumber)
     }
@@ -38,9 +39,9 @@ class Game{
     playersGuessSubmission(num){   
         this.playersGuess = num
         if (this.playersGuess < 1 || this.playersGuess > 100 || (typeof this.playersGuess !== 'number')) { 
-            let throw_error = 'That is an invalid guess.'
-            document.querySelector('#guess-feedback > h4').innerHTML = throw_error
-            throw throw_error
+            let throwError = 'That is an invalid guess.'
+            document.querySelector('#guess-feedback > h4').innerHTML = throwError
+            throw throwError
         }
         return this.checkGuess()
     }
@@ -89,6 +90,7 @@ function newGame(){
 }
 function playGame() {
     let game = newGame();
+    console.log(document)
     const button = document.getElementById('submit');
     button.addEventListener('click',function(){
         let message = ''
@@ -121,8 +123,8 @@ function playGame() {
         document.querySelector('#guess-feedback > h4').innerHTML = message;
     });
 
-    const button_reset=document.getElementById('reset-game');
-    button_reset.addEventListener('click', function(){
+    const buttonReset=document.getElementById('reset-game');
+    buttonReset.addEventListener('click', function(){
         game = newGame();
         const elements = document.querySelectorAll('#guess-list li')
         elements.forEach(function(e){
@@ -131,8 +133,8 @@ function playGame() {
         document.querySelector('#guess-feedback > h4').innerHTML = '';
     })
     
-    const button_hint=document.getElementById('need-hint');
-    button_hint.addEventListener('click', function(){
+    const buttonHint=document.getElementById('need-hint');
+    buttonHint.addEventListener('click', function(){
         document.querySelector('#guess-feedback > h4').innerHTML = game.provideHint();
     })
 }
