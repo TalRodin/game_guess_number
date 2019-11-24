@@ -8,7 +8,7 @@ function generateWinningNumber(){
     }
     else {
       return Math.round(num)
-    }
+    }       
 }
 function shuffle(array) {
     var m = array.length, t, i;
@@ -90,7 +90,6 @@ function newGame(){
 }
 function playGame() {
     let game = newGame();
-    console.log(document)
     const button = document.getElementById('submit');
     button.addEventListener('click',function(){
         let message = ''
@@ -99,7 +98,6 @@ function playGame() {
         const numbers= /[0-9]/g;
         const letters= /[a-zA-Z]/g;
         if(playersGuess.match(numbers) && !(playersGuess.match(letters))){
-            
             let result = parseInt(playersGuess);
             message=game.playersGuessSubmission(result) 
         }
