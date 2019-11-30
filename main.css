@@ -120,7 +120,7 @@
   font-family: 'Amatic SC', cursive;
   color: #444;
   cursor: pointer;
-  
+  outline:0;
 }
 .front .inner p:after{
   content: '';
@@ -215,4 +215,6 @@
       margin: 0 0 2rem 0;
     }
   }
+
+
 
