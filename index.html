@@ -5,29 +5,44 @@
   <meta charset="UTF-8">
   <title>Guessing Game</title>
   <link rel="stylesheet" href="main.css">
-  <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
-  <script src="guessing-game.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">  <script src="guessing-game.js" defer></script>
 </head>
 
-<body>
-  
-  <div id="app">
-
-    <div class="center">
-      <h1>Guess a Number Game!</h1>
-      <h3 id="subtitle">Guess a number between 1-100!</h3>
+<body  ontouchstart="this.classList.toggle('hover');">
+  <div id="app"  >
+    <div class="container">
+    <div class="front" >
+    <div   class="inner">
+      <p class="center" >Guess a Number Game!</p>
+      <span >Guess a number between 1-100!</span>
+      <svg  width="200" height="200" >
+          <circle cx="50" cy="100" r="20" fill="transparent" stroke="black" />
+          <path d="M 40 120
+                   C 40 120 5 150 45 190
+                   M 60 120
+                   C 60 120 90 170 58 190" stroke="black"fill="transparent"/>
+          <circle cx="52" cy="190" r="5" fill="transparent" stroke="black" />
+          <path d= "M40 80 
+                    c 30 -20 -20 -120 0 0
+                    M 60 80
+                    c 40 -10 40 -110 0 0
+                     "
+                    stroke="black"fill="transparent"
+          />
+          </svg>
     </div>
-
+    
+    </div>
+    <div class="back">
+      <div class="inner" >
     <div id='guess-feedback' class='center'>
         <h4></h4>
-      </div> 
-
+    </div> 
     <div>
       <div id="input-parent">
         <input class="center" id="player-input" maxlength='3' autofocus=autofocus></input>
         <button id="submit">Go!</button>
       </div>
-
       <div class="center">
         <ul id="guess-list">
           <li class="guess">-</li>
@@ -38,21 +53,20 @@
         </ul>
       </div>
       <div>
-      <button id='reset-game' class="center">New Game</button>
-      <button id='need-hint' class="center">Hint</button>
+        <button id='reset-game' class="center">New Game</button>
+        <button id='need-hint' class="center">Hint</button>
       </div>
-  
     </div>
   </div>
+
+  </div>
+  </div>
+</div>
   <div id="footer" class="center">
     <div>
       <!-- <h4>Project by Alyona</h4> -->
     </div>
-
   </div>
-  
-
 </body>
-
 
 </html>
